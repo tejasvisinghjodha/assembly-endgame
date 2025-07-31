@@ -1,0 +1,109 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lang-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  max-width: 350px;
+  margin: 0 auto 36px;
+  font-size: 1.3rem;
+  padding: 10px;
+
+}
+
+.game-status {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 15px 20px;
+}
+
+.game-status.won {
+  background-color: #10A95B;
+}
+
+.game-status.lost {
+  background-color: #fd4e4e;
+}
+
+.word {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 5px 0;
+}
+
+.word>span {
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-width: 20px;
+  padding: 0 3px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 450px;
+  align-content: center;
+}
+
+.keyboard>button {
+  background-color: blanchedalmond;
+  cursor: pointer;
+  height: 35px;
+  width: 30px;
+}
+
+#new-game {
+  margin-top: 10px;
+  background-color: #8ca8e6;
+  cursor: pointer;
+  height: 35px;
+  width: 70px;
+}
+
+button.correct {
+  background-color: green;
+}
+
+button.wrong {
+  background-color: red;
+}
+
+span.lost {
+  position: relative;
+}
+
+span.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
