@@ -1,95 +1,146 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  text-align: center;
   padding: 20px;
+  text-align: center;
+  color: #333;
 }
 
+/* Layout */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
 
+/* Language Selector */
 .lang-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   justify-content: center;
-  max-width: 350px;
-  margin: 0 auto 36px;
-  font-size: 1.3rem;
-  padding: 10px;
-
+  max-width: 400px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
 }
 
+.lang-section button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.lang-section button:hover {
+  background-color: #d6e4ff;
+}
+
+/* Game Status Box */
 .game-status {
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 4px;
+  border-radius: 10px;
+  padding: 20px 30px;
   margin: 20px 0;
-  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .game-status.won {
   background-color: #10A95B;
+  color: white;
 }
 
 .game-status.lost {
   background-color: #fd4e4e;
+  color: white;
 }
 
+/* Word Display */
 .word {
-  height: 30px;
+  height: 40px;
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin: 5px 0;
+  gap: 8px;
+  margin: 10px 0;
 }
 
-.word>span {
-  border-bottom: 1px solid;
+.word > span {
+  border-bottom: 2px solid #333;
+  min-width: 24px;
+  padding: 5px 6px;
+  font-size: 1.3rem;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  min-width: 20px;
-  padding: 0 3px;
 }
 
+/* Keyboard */
 .keyboard {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
-  max-width: 450px;
-  align-content: center;
+  max-width: 500px;
+  margin-top: 20px;
 }
 
-.keyboard>button {
-  background-color: blanchedalmond;
+.keyboard > button {
+  height: 40px;
+  width: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff4da;
   cursor: pointer;
-  height: 35px;
-  width: 30px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
-#new-game {
-  margin-top: 10px;
-  background-color: #8ca8e6;
-  cursor: pointer;
-  height: 35px;
-  width: 70px;
+.keyboard > button:hover {
+  background-color: #ffe8b2;
 }
 
 button.correct {
-  background-color: green;
+  background-color: #4CAF50 !important;
+  color: white;
 }
 
 button.wrong {
-  background-color: red;
+  background-color: #f44336 !important;
+  color: white;
 }
 
+/* New Game Button */
+#new-game {
+  margin-top: 20px;
+  background-color: #8ca8e6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#new-game:hover {
+  background-color: #7391d9;
+}
+
+/* Lost character animation */
 span.lost {
   position: relative;
 }
@@ -97,13 +148,36 @@ span.lost {
 span.lost::before {
   content: "💀";
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  font-size: 0.85rem;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 500px) {
+  .keyboard > button {
+    height: 35px;
+    width: 30px;
+  }
+
+  .lang-section {
+    font-size: 1rem;
+  }
+
+  .word > span {
+    font-size: 1.1rem;
+  }
+
+  #new-game {
+    width: 90px;
+    height: 35px;
+  }
 }
